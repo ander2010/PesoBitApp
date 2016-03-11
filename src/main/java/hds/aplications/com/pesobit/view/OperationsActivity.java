@@ -28,7 +28,7 @@ public class OperationsActivity extends AppCompatActivity {
     }
 
     public void onNotificationsClick(View view){
-        //ActivityEditProfile.this.startActivity(new Intent(ActivityEditProfile.this, ActivityNewProperty.class));
+        OperationsActivity.this.startActivity(new Intent(OperationsActivity.this, LogListActivity.class));
     }
 
     public void onRechargeClick(View view){
