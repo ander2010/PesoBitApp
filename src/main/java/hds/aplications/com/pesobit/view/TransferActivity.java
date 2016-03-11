@@ -56,34 +56,49 @@ public class TransferActivity extends AppCompatActivity {
     }
 
     public void onTransferClick(View view){
-        loadingMask.show("Haciendo transferencia");
 
-        TransferClient transferClient = new TransferClient(getApplicationContext());
+        EditText edit_email = (EditText)findViewById(R.id.edit_email);
+        String email = edit_email.getText().toString();
 
-        Callback<Transfer> callback = new Callback<Transfer>() {
+        EditText edit_public_key = (EditText)findViewById(R.id.edit_public_key);
+        String publicKey = edit_public_key.getText().toString();
 
-            @Override
-            public void success(Transfer transfer, Response response) {
-                loadingMask.hide();
-                transfer.save();
-                Toast toast = Toast.makeText(getApplicationContext(), "Transferencia relizada con exito", Toast.LENGTH_LONG);
-                toast.show();
-            }
+        EditText edit_amount = (EditText)findViewById(R.id.edit_amount);
+        String amountText = edit_amount.getText().toString();
 
-            @Override
-            public void failure(RetrofitError retrofitError) {
-                loadingMask.hide();
-            }
-        };
+        EditText edit_message = (EditText)this.findViewById(R.id.edit_message);
+        String message = edit_message.getText().toString();
 
-        EditText editText = (EditText)this.findViewById(R.id.edit_amount);
-        double amount = Double.parseDouble(editText.getText().toString());
+        /*Agregar mensaje*/
 
-        editText = (EditText)this.findViewById(R.id.edit_message);
-        String message = editText.getText().toString();
+        if (Validator.isEmailValid(email) && !publicKey.equals("") && !amountText.equals("") && !message.equals("")){
 
-        Date today = new Date();
-        transferClient.add("1", "2", amount, DateUtils.DATE_FORMAT.format(today), message, callback);
+            loadingMask.show("Haciendo transferencia");
+
+            TransferClient transferClient = new TransferClient(getApplicationContext());
+
+            Callback<Transfer> callback = new Callback<Transfer>() {
+
+                @Override
+                public void success(Transfer transfer, Response response) {
+                    loadingMask.hide();
+                    transfer.save();
+                    MessageToast.showSuccess(getApplicationContext(), getString(R.string.transfer_successful));
+                }
+
+                @Override
+                public void failure(RetrofitError retrofitError) {
+                    loadingMask.hide();
+                }
+            };
+            double amount = Double.parseDouble(amountText);
+            Date today = new Date();
+            transferClient.add("1", "2", amount, DateUtils.DATE_FORMAT.format(today), message, callback);
+
+        }
+        else {
+            MessageToast.showError(getApplicationContext(), getString(R.string.transfer_errors));
+        }
     }
 
     public void onCancelClick(View view){
