@@ -27,6 +27,8 @@ public class LogListActivity extends Activity {
         this.listView = (ListView) findViewById(R.id.list);
         this.emptyList = (TextView) findViewById(R.id.emptyList);
 
+        List<Log> items1 = null;
+
         List<Log> items = new ArrayList();
 
         if(items.size() > 0) {
