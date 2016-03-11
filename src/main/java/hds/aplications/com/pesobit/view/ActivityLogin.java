@@ -55,6 +55,10 @@ public class ActivityLogin extends AppCompatActivity {
         UserRepository userRepository = new UserRepository();
         final User user = (User)userRepository.getByUser(name);
 
+        startFirstActivity(user);
+        return;
+
+        /*
         if(user != null && WifiReceiver.isOnline(getApplicationContext())){
             FragmentManager fragmentManager = getSupportFragmentManager();
             Confirmation dialogo = new Confirmation();
@@ -81,6 +85,7 @@ public class ActivityLogin extends AppCompatActivity {
         }
 
         ckeckUserLocal(user, pass);
+        */
     }
 
     private void ckeckUserLocal(User user, String pass){
