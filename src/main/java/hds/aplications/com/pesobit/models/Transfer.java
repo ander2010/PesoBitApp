@@ -18,6 +18,10 @@ public class Transfer extends Model {
     @SerializedName("transfer_id")
     private long idRef;
 
+    @Column(name = "initialAmount")
+    @SerializedName("initialAmount")
+    private double initialAmount;
+
     @Column(name = "amount")
     @SerializedName("amount")
     private double amount;
@@ -45,7 +49,7 @@ public class Transfer extends Model {
     public Transfer() {
     }
 
-    public Transfer(long idRef, double amount, Date created, Status status, Account sender, Account receiver, String message) {
+    public Transfer(long idRef, double initialAmount, double amount, Date created, Status status, Account sender, Account receiver, String message) {
         this.idRef = idRef;
         this.amount = amount;
         this.created = created;
@@ -53,6 +57,7 @@ public class Transfer extends Model {
         this.sender = sender;
         this.receiver = receiver;
         this.message = message;
+        this.initialAmount = initialAmount;
     }
 
     public long getIdRef() {
@@ -110,4 +115,8 @@ public class Transfer extends Model {
     public void setMessage(String message) {
         this.message = message;
     }
+
+    public double getInitialAmount() { return initialAmount;}
+
+    public void setInitialAmount(double initialAmount) { this.initialAmount = initialAmount; }
 }

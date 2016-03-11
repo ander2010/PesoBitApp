@@ -52,19 +52,13 @@ public class LogAdapter extends BaseAdapter {
         }
 
         // Set data into the view.
-        /*TextView textTitle = (TextView) rowView.findViewById(R.id.textTitle);
-        TextView textCheckout = (TextView) rowView.findViewById(R.id.textCheckout);
-        TextView textCheckin = (TextView) rowView.findViewById(R.id.textCheckin);
-        TextView roomsTotal = (TextView) rowView.findViewById(R.id.roomsTotal);*/
-
-        /*Resources res = this.context.getResources();
-        String roomString = this.context.getResources().getQuantityString(R.plurals.rooms, 2, 2);*/
+        TextView lblLogMessage = (TextView) rowView.findViewById(R.id.lbl_log_message);
 
         Transfer item = this.items.get(position);
-        /*textTitle.setText(item.getAccommodation().getName());
-        textCheckout.setText("Apr 16, 2016");
-        textCheckin.setText("Apr 20, 2016");
-        roomsTotal.setText(roomString);*/
+
+        Resources resources = this.context.getResources();
+        String logMessage = String.format(resources.getString(R.string.log_message), item.getSender().getUser().getFullName(), item.getInitialAmount(), item.getReceiver().getUser().getFullName(), item.getAmount(), item.getInitialAmount() - item.getAmount());
+        lblLogMessage.setText(logMessage);
 
         return rowView;
     }

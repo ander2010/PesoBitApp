@@ -23,4 +23,5 @@
     <string name="cancel">Cancelar</string>
     <string name="action_settings">Configuraciones</string>
     <string name="emptyList">No hay información para mostrar</string>
+    <string name="log_message">%1$s con %2$s pesos transfiere a %3$s %4$s quedándole %5$s</string>
 </resources>
