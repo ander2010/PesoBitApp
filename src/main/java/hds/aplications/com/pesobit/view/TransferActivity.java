@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -64,15 +65,13 @@ public class TransferActivity extends AppCompatActivity {
             public void success(Transfer transfer, Response response) {
                 loadingMask.hide();
                 transfer.save();
-                int a = 2;
-                int b = a +1;
+                Toast toast = Toast.makeText(getApplicationContext(), "Transferencia relizada con exito", Toast.LENGTH_LONG);
+                toast.show();
             }
 
             @Override
             public void failure(RetrofitError retrofitError) {
                 loadingMask.hide();
-                int a = 2;
-                int b = a +1;
             }
         };
 
