@@ -73,6 +73,8 @@ public class TransferActivity extends AppCompatActivity {
             @Override
             public void failure(RetrofitError retrofitError) {
                 loadingMask.hide();
+                Toast toast = Toast.makeText(getApplicationContext(), "Transferencia relizada con exito", Toast.LENGTH_LONG);
+                toast.show();
             }
         };
 
