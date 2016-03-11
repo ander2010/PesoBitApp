@@ -1,6 +1,7 @@
 package hds.aplications.com.pesobit.view;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
 
+import hds.aplications.com.pesobit.OperationsActivity;
 import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.common.DateUtils;
 import hds.aplications.com.pesobit.common.MessageToast;
