@@ -1,7 +1,6 @@
-package hds.aplications.com.pesobit;
+package hds.aplications.com.pesobit.view;
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +10,7 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
 
+import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.common.DateUtils;
 import hds.aplications.com.pesobit.common.MessageToast;
 import hds.aplications.com.pesobit.common.SAppData;
@@ -19,7 +19,6 @@ import hds.aplications.com.pesobit.common.alerts.Confirmation;
 import hds.aplications.com.pesobit.models.User;
 import hds.aplications.com.pesobit.repositories.UserRepository;
 import hds.aplications.com.pesobit.services.UserClient;
-import hds.aplications.com.pesobit.view.LoadMask;
 import retrofit.Callback;
 import retrofit.RetrofitError;
 import retrofit.client.Response;

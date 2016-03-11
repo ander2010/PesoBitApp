@@ -12,14 +12,14 @@ import com.activeandroid.annotation.Table;
 public class Language extends Model {
 
 
-    @Column(name = "idRef")
-    public long idRef;
+    @Column(name = "id_ref")
+    private long idRef;
 
     @Column(name = "name")
-    public String name;
+    private String name;
 
     @Column(name = "code")
-    public String code;
+    private String code;
 
     public Language() {
     }
