@@ -84,17 +84,17 @@ public class ActivityLogin extends AppCompatActivity {
 
     private void ckeckUserLocal(User user, String pass){
         if(user != null && user.getPassword().equals(pass)){
-            startActivityWelcome(user);
+            startFirstActivity(user);
         }
         else {
             MessageToast.showError(ActivityLogin.this.getApplicationContext(), getString(R.string.icorrect_credential));
         }
     }
 
-    private void startActivityWelcome(User user){
+    private void startFirstActivity(User user){
         //Creamos la información a pasar entre activities
         SAppData.getInstance().setUser(user);
-        //ActivityLogin.this.startActivity(new Intent(ActivityLogin.this, ActivityWelcome.class));
+        ActivityLogin.this.startActivity(new Intent(ActivityLogin.this, OperationsActivity.class));
     }
 
     public void synchronizeUserData(String userName, final String pass) {
@@ -108,7 +108,7 @@ public class ActivityLogin extends AppCompatActivity {
                     try {
                         user.setPassword(pass);
                         UserRepository.saveUser(user);
-                        ActivityLogin.this.startActivityWelcome(user);
+                        ActivityLogin.this.startFirstActivity(user);
                     }
                     catch(Exception ex){
                         MessageToast.showError(ActivityLogin.this.getApplicationContext(), ex.getLocalizedMessage());

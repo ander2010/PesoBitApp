@@ -13,4 +13,16 @@
     <string name="sync_info_alert_message_to_local">¿Desea sincronizar los datos locales con los del Servidor?</string>
     <string name="sync_info_alert_message_to_server">¿Desea sincronizar los datos del Servidor con los cambios realizados a la app?</string>
     <string name="no_internet_connection">Verifique el estado de su conexión e intentelo nuevamente.</string>
+    <string name="operations_transfer">Transferir</string>
+    <string name="operations_notifications">Notificaciones</string>
+    <string name="operations_recharge">Solicitar recarga</string>
+    <string name="email">Correo electrónico</string>
+    <string name="public_key">Llave pública</string>
+    <string name="amount">Monto</string>
+    <string name="message">Mensaje</string>
+    <string name="cancel">Cancelar</string>
+    <string name="action_settings">Configuraciones</string>
+    <string name="title_activity_notifications">NotificationsActivity</string>
+
+    <string name="hello_world">Hello world!</string>
 </resources>
