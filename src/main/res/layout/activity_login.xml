@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".view.ActivityLogin">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/al_relative_layout_btn_grup_mcp"
+        android:layout_marginBottom="61dp"
+        android:background="@drawable/shape_back_blue">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_gravity="center_vertical">
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/edit_text_user"
+                android:layout_centerHorizontal="true"
+                android:drawableRight="@mipmap/user_white"
+                android:textColor="@android:color/white"
+                style="@style/EditTextStyle"
+                android:singleLine="true"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/hint_user"/>
+
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:ems="10"
+                android:id="@+id/edit_text_user_pass"
+                android:layout_below="@+id/edit_text_user"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="8dp"
+                android:drawableRight="@mipmap/ic_pass"
+                android:textColor="@android:color/white"
+                style="@style/EditTextStyle"
+                android:singleLine="true"
+                android:textColorHint="@android:color/white"
+                android:hint="@string/hint_pass"/>
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/al_relative_layout_btn_grup_mcp"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom">
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
+            android:text="@string/btn_input"
+            android:id="@+id/al_button_my_home"
+            android:gravity="left|center"
+            android:paddingLeft="20dp"
+            android:background="@drawable/selector_btn_green"
+            android:textColor="#ffffff"
+            android:layout_toRightOf="@+id/al_button_ico_my_home"
+            android:layout_toEndOf="@+id/al_button_ico_my_home"
+            android:onClick="actionLogin"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="60dp"
+            android:id="@+id/al_button_ico_my_home"
+            android:background="@drawable/selector_btn_ico_green"
+            android:drawableLeft="@mipmap/ic_user_register"
+            android:paddingLeft="20dp"
+            android:onClick="actionLogin"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/load_mask"/>
+
+</RelativeLayout>

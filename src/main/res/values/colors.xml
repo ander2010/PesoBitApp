@@ -8,10 +8,6 @@
     <color name="successText">#46a546</color>
     <color name="warningText">#c67605</color>
 
-    <color name="calendar_day_no_current_month">#ffd7d9db</color>
-    <color name="calendar_text_today">#030101</color>
-    <color name="calendar_transparent">#00ffffff</color>
-
     <color name="load_mask_bg">#b9000000</color>
     <color name="color_floating_button">#fd8701</color>
     <color name="color_floating_bar">#fdfdfe</color>
@@ -28,4 +24,7 @@
     <color name="color_btn_green">#55a32f</color>
     <color name="color_btn_ico_green">#4e942b</color>
 
+    <color name="color_edit_text_blue">#0b648d</color>
+
+    <color name="color_back_blue">#094e75</color>
 </resources>

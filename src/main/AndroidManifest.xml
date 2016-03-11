@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest
-    package="hds.aplications.com.pesobit"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest package="hds.aplications.com.pesobit"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
 
@@ -29,15 +27,15 @@
             android:name="AA_MODELS"
             android:value="hds.aplications.com.mycplight.models.Language,hds.aplications.com.mycplight.models.Province,hds.aplications.com.mycplight.models.Municipality,hds.aplications.com.mycplight.models.Address,hds.aplications.com.mycplight.models.Room,hds.aplications.com.mycplight.models.Accommodation,hds.aplications.com.mycplight.models.AudiovisualType,hds.aplications.com.mycplight.models.BathroomType,hds.aplications.com.mycplight.models.ClimateType,hds.aplications.com.mycplight.models.Facility,hds.aplications.com.mycplight.models.FacilityType,hds.aplications.com.mycplight.models.Photo,hds.aplications.com.mycplight.models.PhotoType,hds.aplications.com.mycplight.models.Reservation,hds.aplications.com.mycplight.models.ReservationStatus,hds.aplications.com.mycplight.models.RoomType,hds.aplications.com.mycplight.models.SpokenLanguage,hds.aplications.com.mycplight.models.UDetails,hds.aplications.com.mycplight.models.User,hds.aplications.com.mycplight.models.UserAccommodation"/>
 
-        <receiver android:name="hds.aplications.com.pesobit.common.WifiReceiver">
+        <receiver android:name=".common.WifiReceiver">
             <intent-filter android:priority="100">
                 <action android:name="android.net.wifi.STATE_CHANGE"/>
             </intent-filter>
         </receiver>
 
         <activity
-            android:name="hds.aplications.com.pesobit.view.ActivityInitial"
-            android:label="@string/title_activity_activity_initial"
+            android:name=".ActivityLogin"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
