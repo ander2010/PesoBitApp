@@ -19,7 +19,7 @@ public class TransferClient extends BaseClient {
         super(TransferService.class, context);
     }
 
-    public void add(String sender, String receiver, double amount, String create, String message, Callback<Transfer> callback){
-        ((TransferService)this.service).add(BaseClient.API_RESPONSE_FORMAT, sender, receiver, amount, create, message, callback);
+    public void add(String sender, String receiver, double amount, String create, String message, String state, Callback<Transfer> callback){
+        ((TransferService)this.service).add(BaseClient.API_RESPONSE_FORMAT, sender, receiver, amount, create, message, state, callback);
     }
 }

@@ -17,6 +17,6 @@ public interface TransferService {
 
     @FormUrlEncoded
     @POST("/api/v1/transfers.{format}")
-    void add(@Path("format") String format, @Field("sender") String sender, @Field("receiver") String receiver, @Field("amount") double amount, @Field("create") String create, @Field("message") String message, Callback<Transfer> callback);
+    void add(@Path("format") String format, @Field("sender") String sender, @Field("receiver") String receiver, @Field("amount") double amount, @Field("create") String create, @Field("message") String message, @Field("state") String state, Callback<Transfer> callback);
 
 }
