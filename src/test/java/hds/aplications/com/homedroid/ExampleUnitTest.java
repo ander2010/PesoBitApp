@@ -1,4 +1,4 @@
-package hds.aplications.com.mycplight;
+package hds.aplications.com.pesobit;
 
 import org.junit.Test;
 
