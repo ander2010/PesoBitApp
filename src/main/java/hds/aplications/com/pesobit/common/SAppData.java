@@ -1,6 +1,5 @@
 package hds.aplications.com.pesobit.common;
 
-import hds.aplications.com.pesobit.models.Accommodation;
 import hds.aplications.com.pesobit.models.User;
 
 /**
@@ -11,7 +10,6 @@ public class SAppData {
     private static SAppData ourInstance = new SAppData();
 
     private User user;
-    private Accommodation accommodation;
 
     public static SAppData getInstance() {
         return ourInstance;
@@ -25,13 +23,5 @@ public class SAppData {
 
     public void setUser(User user) {
         this.user = user;
-    }
-
-    public Accommodation getAccommodation() {
-        return accommodation;
-    }
-
-    public void setAccommodation(Accommodation accommodation) {
-        this.accommodation = accommodation;
     }
 }

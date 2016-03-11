@@ -27,7 +27,7 @@ public class UserRepository extends BaseRepository {
             }
 
             user.save();
-            AccommodationRepository.saveAccommodationsFromUser(user);
+            //AccommodationRepository.saveAccommodationsFromUser(user);
             ActiveAndroid.setTransactionSuccessful();
         }
         catch(Exception ex){

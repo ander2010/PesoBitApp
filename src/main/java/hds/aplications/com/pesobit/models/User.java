@@ -47,9 +47,6 @@ public class User extends Model{
     @SerializedName("user_enabled")
     String enabled;
 
-    @SerializedName("property")
-    List<Accommodation> accommodations;
-
     public User() {
     }
 
@@ -128,25 +125,6 @@ public class User extends Model{
 
     public String getFullName(){
         return this.firstName + " " + this.lastName;
-    }
-
-    public List<Accommodation> getAccommodations() {
-        if(this.accommodations == null){
-            List<UserAccommodation> userAccommodations = this.getUserAccommodations();
-            if (userAccommodations != null){
-                this.accommodations = new ArrayList<>();
-                for(UserAccommodation userAccommodation : userAccommodations)
-                {
-                    Accommodation accommodation = userAccommodation.getAccommodation();
-                    this.accommodations.add(accommodation);
-                }
-            }
-        }
-        return this.accommodations;
-    }
-
-    public List<UserAccommodation> getUserAccommodations() {
-        return getMany(UserAccommodation.class, "id_user");
     }
 }
 

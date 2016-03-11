@@ -22,10 +22,10 @@
             android:value="hd.db"/>
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="2"/>
+            android:value="1"/>
         <meta-data
             android:name="AA_MODELS"
-            android:value="hds.aplications.com.mycplight.models.Language,hds.aplications.com.mycplight.models.Province,hds.aplications.com.mycplight.models.Municipality,hds.aplications.com.mycplight.models.Address,hds.aplications.com.mycplight.models.Room,hds.aplications.com.mycplight.models.Accommodation,hds.aplications.com.mycplight.models.AudiovisualType,hds.aplications.com.mycplight.models.BathroomType,hds.aplications.com.mycplight.models.ClimateType,hds.aplications.com.mycplight.models.Facility,hds.aplications.com.mycplight.models.FacilityType,hds.aplications.com.mycplight.models.Photo,hds.aplications.com.mycplight.models.PhotoType,hds.aplications.com.mycplight.models.Reservation,hds.aplications.com.mycplight.models.ReservationStatus,hds.aplications.com.mycplight.models.RoomType,hds.aplications.com.mycplight.models.SpokenLanguage,hds.aplications.com.mycplight.models.UDetails,hds.aplications.com.mycplight.models.User,hds.aplications.com.mycplight.models.UserAccommodation"/>
+            android:value="hds.aplications.com.mycplight.models.Language,hds.aplications.com.mycplight.models.User"/>
 
         <receiver android:name=".common.WifiReceiver">
             <intent-filter android:priority="100">
