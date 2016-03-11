@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 
+import hds.aplications.com.pesobit.R;
+
 public class OperationsActivity extends AppCompatActivity {
 
     @Override

@@ -22,15 +22,10 @@
             android:value="hd.db" />
         <meta-data
             android:name="AA_DB_VERSION"
-            android:value="1" />
+            android:value="2" />
         <meta-data
             android:name="AA_MODELS"
-            android:value="hds.aplications.com.pesobit.models.Language,
-                           hds.aplications.com.pesobit.models.User,
-                           hds.aplications.com.pesobit.models.Account,
-                           hds.aplications.com.pesobit.models.Friend,
-                           hds.aplications.com.pesobit.models.Status,
-                           hds.aplications.com.pesobit.models.Transfer"/>
+            android:value="hds.aplications.com.pesobit.models.Language,hds.aplications.com.pesobit.models.User,hds.aplications.com.pesobit.models.Account,hds.aplications.com.pesobit.models.Friend,hds.aplications.com.pesobit.models.Status,hds.aplications.com.pesobit.models.Transfer"/>
 
         <receiver android:name=".common.WifiReceiver" >
             <intent-filter android:priority="100" >
@@ -42,16 +37,16 @@
             android:name=".view.ActivityLogin"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" >
-        </activity>
-        <activity
-            android:name=".view.OperationsActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".view.OperationsActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" >
         </activity>
         <activity
             android:name=".view.TransferActivity"

@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.common.MessageToast;
 
 public class TransferActivity extends AppCompatActivity {
