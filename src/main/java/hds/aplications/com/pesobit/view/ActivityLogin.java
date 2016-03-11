@@ -11,7 +11,6 @@ import android.widget.EditText;
 import java.util.Calendar;
 import java.util.Date;
 
-import hds.aplications.com.pesobit.OperationsActivity;
 import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.common.DateUtils;
 import hds.aplications.com.pesobit.common.MessageToast;

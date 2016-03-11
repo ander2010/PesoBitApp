@@ -1,4 +1,4 @@
-package hds.aplications.com.pesobit;
+package hds.aplications.com.pesobit.view;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

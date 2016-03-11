@@ -1,4 +1,4 @@
-package hds.aplications.com.pesobit;
+package hds.aplications.com.pesobit.view;
 
 import android.app.Activity;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +12,9 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
+import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.adapters.LogAdapter;
+import hds.aplications.com.pesobit.models.Transfer;
 
 public class LogListActivity extends Activity {
 
@@ -27,9 +29,7 @@ public class LogListActivity extends Activity {
         this.listView = (ListView) findViewById(R.id.list);
         this.emptyList = (TextView) findViewById(R.id.emptyList);
 
-        List<Log> items1 = null;
-
-        List<Log> items = new ArrayList();
+        List<Transfer> items = new ArrayList();
 
         if(items.size() > 0) {
             // Sets the data behind this ListView
