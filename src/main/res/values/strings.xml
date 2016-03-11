@@ -22,7 +22,5 @@
     <string name="message">Mensaje</string>
     <string name="cancel">Cancelar</string>
     <string name="action_settings">Configuraciones</string>
-    <string name="title_activity_notifications">NotificationsActivity</string>
-
-    <string name="hello_world">Hello world!</string>
+    <string name="emptyList">No hay información para mostrar</string>
 </resources>
