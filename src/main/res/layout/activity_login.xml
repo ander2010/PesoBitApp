@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignBottom="@+id/al_relative_layout_btn_grup_mcp"
+        android:layout_marginBottom="60dp"
         android:background="@drawable/shape_back_blue">
 
         <RelativeLayout
