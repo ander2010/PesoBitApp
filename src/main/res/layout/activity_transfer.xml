@@ -102,6 +102,7 @@
             android:background="@drawable/selector_btn_green"
             android:textColor="@android:color/white"
             android:layout_weight="1"
+            android:onClick="onTransferClick"
             />
 
         <Button

@@ -6,9 +6,11 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.common.MessageToast;
+import hds.aplications.com.pesobit.common.Validator;
 
 public class TransferActivity extends AppCompatActivity {
 
@@ -41,7 +43,24 @@ public class TransferActivity extends AppCompatActivity {
     }
 
     public void onTransferClick(View view){
-        MessageToast.showInfo(getApplicationContext(), "Monto transferido");
+
+        EditText edit_email = (EditText)findViewById(R.id.edit_email);
+        String email = edit_email.getText().toString();
+
+        EditText edit_public_key = (EditText)findViewById(R.id.edit_public_key);
+        String publicKey = edit_public_key.getText().toString();
+
+        EditText edit_amount = (EditText)findViewById(R.id.edit_amount);
+        String amount = edit_amount.getText().toString();
+
+        /*Agregar mensaje*/
+
+        if (Validator.isEmailValid(email) && !publicKey.equals("") && !amount.equals("")){
+
+        }
+        else {
+            MessageToast.showError(getApplicationContext(), getString(R.string.transfer_errors));
+        }
     }
 
     public void onCancelClick(View view){

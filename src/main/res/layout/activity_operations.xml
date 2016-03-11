@@ -44,7 +44,5 @@
         android:onClick="onRechargeClick"
         android:enabled="false"
         android:clickable="false"
-        android:background="@drawable/selector_btn_green"
-        android:textColor="@android:color/white"
         android:padding="20dp" />
 </RelativeLayout>
