@@ -74,6 +74,24 @@
             style="@style/EditTextStyle"
             android:textColorHint="@android:color/white"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Mensaje"
+            android:id="@+id/lbl_sms"
+            android:textColor="@android:color/white"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/edit_message"
+            android:textColor="@android:color/white"
+            style="@style/EditTextStyle"
+            android:textColorHint="@android:color/white"/>
+
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
