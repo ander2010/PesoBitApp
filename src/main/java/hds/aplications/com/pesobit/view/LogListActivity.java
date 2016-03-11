@@ -9,12 +9,13 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.activeandroid.Model;
 
+import java.util.List;
 import hds.aplications.com.pesobit.R;
 import hds.aplications.com.pesobit.adapters.LogAdapter;
 import hds.aplications.com.pesobit.models.Transfer;
+import hds.aplications.com.pesobit.repositories.TransferRepository;
 
 public class LogListActivity extends Activity {
 
@@ -29,7 +30,8 @@ public class LogListActivity extends Activity {
         this.listView = (ListView) findViewById(R.id.list);
         this.emptyList = (TextView) findViewById(R.id.emptyList);
 
-        List<Transfer> items = new ArrayList();
+        TransferRepository transferRepository = new TransferRepository();
+        List<Transfer> items = (List<Transfer>)(List<?>)transferRepository.getAll();
 
         if(items.size() > 0) {
             // Sets the data behind this ListView
