@@ -13,4 +13,9 @@ public class TransferRepository extends BaseRepository {
     public TransferRepository() {
         this.cls = Transfer.class;
     }
+
+
+    public List<Model> getAll() {
+        return new Select().from((Class<? extends Model>) cls).orderBy("created DESC").execute();
+    }
 }
