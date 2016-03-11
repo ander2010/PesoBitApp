@@ -11,7 +11,7 @@ import retrofit.converter.GsonConverter;
  * mgleonsc@gmail.com
  */
 public class BaseClient {
-    private static final String API_BASE_URL = "http://cbs.localsupper.com";
+    private static final String API_BASE_URL = "http://192.168.1.120";
     public static final String API_RESPONSE_FORMAT = "json";
     public static final String API_KEY = "api-241c1e5ff6071fbec3505db53ce2d7a72";
 

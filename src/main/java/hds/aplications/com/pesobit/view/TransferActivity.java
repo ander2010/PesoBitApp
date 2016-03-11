@@ -7,17 +7,30 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import java.util.Date;
 
 import hds.aplications.com.pesobit.R;
+import hds.aplications.com.pesobit.common.DateUtils;
 import hds.aplications.com.pesobit.common.MessageToast;
 import hds.aplications.com.pesobit.common.Validator;
+import hds.aplications.com.pesobit.models.Transfer;
+import hds.aplications.com.pesobit.services.TransferClient;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class TransferActivity extends AppCompatActivity {
+
+    LoadMask loadingMask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
+
+        loadingMask = new LoadMask(this);
     }
 
     @Override
@@ -43,24 +56,34 @@ public class TransferActivity extends AppCompatActivity {
     }
 
     public void onTransferClick(View view){
+        loadingMask.show("Haciendo transferencia");
 
-        EditText edit_email = (EditText)findViewById(R.id.edit_email);
-        String email = edit_email.getText().toString();
+        TransferClient transferClient = new TransferClient(getApplicationContext());
 
-        EditText edit_public_key = (EditText)findViewById(R.id.edit_public_key);
-        String publicKey = edit_public_key.getText().toString();
+        Callback<Transfer> callback = new Callback<Transfer>() {
 
-        EditText edit_amount = (EditText)findViewById(R.id.edit_amount);
-        String amount = edit_amount.getText().toString();
+            @Override
+            public void success(Transfer transfer, Response response) {
+                loadingMask.hide();
+                transfer.save();
+                Toast toast = Toast.makeText(getApplicationContext(), "Transferencia relizada con exito", Toast.LENGTH_LONG);
+                toast.show();
+            }
 
-        /*Agregar mensaje*/
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                loadingMask.hide();
+            }
+        };
 
-        if (Validator.isEmailValid(email) && !publicKey.equals("") && !amount.equals("")){
+        EditText editText = (EditText)this.findViewById(R.id.edit_amount);
+        double amount = Double.parseDouble(editText.getText().toString());
 
-        }
-        else {
-            MessageToast.showError(getApplicationContext(), getString(R.string.transfer_errors));
-        }
+        editText = (EditText)this.findViewById(R.id.edit_message);
+        String message = editText.getText().toString();
+
+        Date today = new Date();
+        transferClient.add("1", "2", amount, DateUtils.DATE_FORMAT.format(today), message, callback);
     }
 
     public void onCancelClick(View view){
