@@ -6,16 +6,29 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
+
+import java.util.Date;
 
 import hds.aplications.com.pesobit.R;
+import hds.aplications.com.pesobit.common.DateUtils;
 import hds.aplications.com.pesobit.common.MessageToast;
+import hds.aplications.com.pesobit.models.Transfer;
+import hds.aplications.com.pesobit.services.TransferClient;
+import retrofit.Callback;
+import retrofit.RetrofitError;
+import retrofit.client.Response;
 
 public class TransferActivity extends AppCompatActivity {
+
+    LoadMask loadingMask;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_transfer);
+
+        loadingMask = new LoadMask(this);
     }
 
     @Override
@@ -41,7 +54,36 @@ public class TransferActivity extends AppCompatActivity {
     }
 
     public void onTransferClick(View view){
-        MessageToast.showInfo(getApplicationContext(), "Monto transferido");
+        loadingMask.show("Haciendo transferencia");
+
+        TransferClient transferClient = new TransferClient(getApplicationContext());
+
+        Callback<Transfer> callback = new Callback<Transfer>() {
+
+            @Override
+            public void success(Transfer transfer, Response response) {
+                loadingMask.hide();
+                transfer.save();
+                int a = 2;
+                int b = a +1;
+            }
+
+            @Override
+            public void failure(RetrofitError retrofitError) {
+                loadingMask.hide();
+                int a = 2;
+                int b = a +1;
+            }
+        };
+
+        EditText editText = (EditText)this.findViewById(R.id.edit_amount);
+        double amount = Double.parseDouble(editText.getText().toString());
+
+        editText = (EditText)this.findViewById(R.id.edit_message);
+        String message = editText.getText().toString();
+
+        Date today = new Date();
+        transferClient.add("1", "2", amount, DateUtils.DATE_FORMAT.format(today), message, callback);
     }
 
     public void onCancelClick(View view){
